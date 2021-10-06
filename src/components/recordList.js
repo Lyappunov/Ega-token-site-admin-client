@@ -4,7 +4,6 @@ import axios from 'axios';
 import PropTypes from "prop-types";
 import {connect} from "react-redux";
 import { Link } from "react-router-dom";
-import Navbar from "./navbar";
 import SideBar from "./sidebar"
 import HeaderBar from "./headerbar"
 import {SERVER_MAIN_URL} from '../config'
