@@ -3,7 +3,8 @@ import React, { Component } from "react";
 import axios from 'axios';
 import PropTypes from "prop-types";
 import {connect} from "react-redux";
-import {SERVER_MAIN_URL} from '../../config'
+import {SERVER_MAIN_URL} from '../../config';
+import Chart from "../../images/chart.png";
 
 
 
@@ -46,7 +47,9 @@ class PairPriceCard extends Component {
                 </div>
                 
                 <div className="card-body">
-                    <div id="apex-candlestick-chart"></div>
+                    <div id="apex-candlestick-chart" style={{textAlign:"center"}}>
+                        <img src={Chart}/>
+                    </div>
                 </div>
             </div>
         </div>

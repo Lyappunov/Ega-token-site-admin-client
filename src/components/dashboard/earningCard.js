@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import axios from 'axios';
 import PropTypes from "prop-types";
 import {connect} from "react-redux";
+import CircleChart from '../../images/circlechart.png'
 
 
 
@@ -54,7 +55,9 @@ class EarningCard extends Component {
                     </div>
                     <div className="card-body">
                     <div className="d-flex flex-wrap align-items-center justify-content-between">
-                        <div id="multiple-radialbar-chart" className="col-md-8 col-lg-8 multiple-radialbar-chart"></div>
+                        <div id="multiple-radialbar-chart" className="col-md-8 col-lg-8 multiple-radialbar-chart" style={{textAlign:'center'}}>
+                            <img src={CircleChart} />
+                        </div>
                         <div className="d-grid gap col-md-4 col-lg-4">
                             <div className="d-flex align-items-start">
                                 <svg className="mt-2" xmlns="http://www.w3.org/2000/svg" width="14" viewBox="0 0 24 24" fill="#00EC42">
