@@ -15,6 +15,7 @@ import RecordList from "./components/recordList";
 import Signin from "./components/auth/signin";
 import Signup from "./components/auth/signup";
 import setAuthToken from "./utils/setAuthToken";
+import DashBoard from "./components/dashboard";
 import { setCurrentUser, logoutUser } from "./actions/authActions";
 import history from './history'
 
@@ -55,6 +56,9 @@ function App  ()  {
                 <PrivateRoute path="/edit/:id" component={Edit} />
                 <PrivateRoute path="/create">
                   <Create />
+                </PrivateRoute>
+                <PrivateRoute path="/dashboard">
+                  <DashBoard />
                 </PrivateRoute>
             </Switch>
             

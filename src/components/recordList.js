@@ -98,7 +98,7 @@ class RecordList extends Component {
       <div>
           <SideBar />
           <HeaderBar />
-          <div className="container-fluid content-inner pb-0" style={{marginLeft:'13%', paddingRight:'15%'}}>
+          <div className="container-fluid content-inner pb-0" style={{marginLeft:'15%', paddingRight:'15%'}}>
                 <div className="row">
                     <div className="col-sm-12">
                         <div className="card">

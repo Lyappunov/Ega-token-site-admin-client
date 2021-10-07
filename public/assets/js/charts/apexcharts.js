@@ -1,7 +1,8 @@
-(function (jQuery) {
-    "use strict";
+
 //apex
-if (jQuery("#apex-candlestick-chart").length) {
+
+if (document.getElementById("apex-candlestick-chart")) {
+    
   options = {
       chart: {
           height: 357,
@@ -196,13 +197,13 @@ if (jQuery("#apex-candlestick-chart").length) {
       }
   };
   if(typeof ApexCharts !== undefined){
-     const chart = new ApexCharts(document.querySelector("#apex-candlestick-chart"), options).render()
+     const chart = new ApexCharts(document.getElementById("apex-candlestick-chart"), options).render()
   }
 }
 
 
 //radar-multiple-chart
-if (jQuery("#radar-multiple-chart").length) {
+if (document.getElementById("radar-multiple-chart")) {
   var options = {
       series: [{
           name: 'Series 1',
@@ -243,13 +244,13 @@ if (jQuery("#radar-multiple-chart").length) {
   };
 
   if(typeof ApexCharts !== undefined){
-    (chart = new ApexCharts(document.querySelector("#radar-multiple-chart"), options)).render()
+    (chart = new ApexCharts(document.getElementById("radar-multiple-chart"), options)).render()
   }
 }
 
 
 //multiple-radialbar-chart
-if (jQuery('#multiple-radialbar-chart').length) {
+if (document.getElementById('multiple-radialbar-chart')) {
     const options = {
       series: [55, 75],
       chart: {
@@ -275,9 +276,8 @@ if (jQuery('#multiple-radialbar-chart').length) {
     labels: ['Bitcoin', 'LiteCoin'],
     };
     if(ApexCharts !== undefined) {
-      var chart = new ApexCharts(document.querySelector("#multiple-radialbar-chart"), options);
+      var chart = new ApexCharts(document.getElementById("multiple-radialbar-chart"), options);
       chart.render();
     }
   }
 
-})(jQuery)

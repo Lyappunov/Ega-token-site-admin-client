@@ -19,7 +19,7 @@ class HeaderBar extends Component {
     console.log('My name is ', user);
   return (
     <div>
-        <div className="position-relative" style={{marginLeft:'13%'}}>
+        <div className="position-relative" style={{marginLeft:'15%'}}>
             <nav className="nav navbar navbar-expand-lg navbar-light iq-navbar border-bottom" style={{minHeight:104}}>
                 <div className="container-fluid navbar-inner">
                     <a href="/" className="navbar-brand">

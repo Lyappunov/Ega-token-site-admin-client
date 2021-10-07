@@ -5803,7 +5803,7 @@ textarea.form-control-lg {
 .d-table-cell {
   display: table-cell !important; }
 
-.d-flex {
+.d-flex-common {
   display: -webkit-flex !important;
   display: -ms-flexbox !important;
   display: flex !important; }
@@ -6115,7 +6115,7 @@ textarea.form-control-lg {
       -ms-flex-pack: distribute !important;
           justify-content: space-around !important; }
 
-.justify-content-evenly {
+.justify-content-evenly-common {
   -webkit-justify-content: space-evenly !important;
       -ms-flex-pack: space-evenly !important;
           justify-content: space-evenly !important; }
@@ -6752,9 +6752,15 @@ textarea.form-control-lg {
   word-break: break-word !important; }
 
 /* rtl:end:remove */
-.text-primary {
+.text-primary-common {
   --bs-text-opacity: 1;
-  color: rgba(var(--bs-primary-rgb), var(--bs-text-opacity)) !important; }
+  color: rgba(var(--bs-primary-rgb), var(--bs-text-opacity)) }
+
+.text-primary-price {
+    --bs-text-opacity: 1;
+    color: rgba(var(--bs-primary-rgb), var(--bs-text-opacity));
+    padding-right:5%; 
+  }
 
 .text-secondary {
   --bs-text-opacity: 1;
