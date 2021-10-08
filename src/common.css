@@ -20128,3 +20128,35 @@ body.offcanvas-active {
   min-width: 900px !important;
   background: none !important;
 }
+.react-confirm-alert-overlay{
+  background: rgba(0, 0, 0, 0.9)!important;
+}
+
+.react-confirm-alert-body{
+  background:rgba(25, 25, 26, 1) !important;
+  color:white !important
+}
+
+.react-confirm-alert-button-group > button {
+  display: inline-block !important;
+  font-weight: 400!important;
+  line-height: 1.5!important;
+  color: #BFBFBF!important;
+  text-align: center!important;
+  vertical-align: middle!important;
+  cursor: pointer!important;
+  -webkit-user-select: none!important;
+     -moz-user-select: none!important;
+      -ms-user-select: none!important;
+          user-select: none!important;
+  background-color: transparent!important;
+  border: 1px solid transparent!important;
+  padding: 0.5rem 1.5rem!important;
+  font-size: 1rem!important;
+  border-radius: 0.25rem!important;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out!important;
+  color: #fff!important;
+  background-color: #FF971D !important;
+  border-color: #FF971D !important;
+  box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0);
+}

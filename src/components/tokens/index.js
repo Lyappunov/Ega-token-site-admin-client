@@ -40,6 +40,7 @@ const Record = (props) => {
                 label: 'Yes',
                 onClick: () => {
                   props.deleteToken(props.record._id);
+                  window.location.href = '/tokens'
                 }
               },
               {
