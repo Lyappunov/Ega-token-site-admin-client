@@ -4,6 +4,8 @@ import axios from 'axios';
 import PropTypes from "prop-types";
 import {connect} from "react-redux";
 import { Link } from "react-router-dom";
+import { confirmAlert } from 'react-confirm-alert';
+import 'react-confirm-alert/src/react-confirm-alert.css';
 import SideBar from "../sidebar"
 import HeaderBar from "../headerbar"
 import {SERVER_MAIN_URL} from '../../config'
@@ -26,11 +28,28 @@ const Record = (props) => {
     <td>{props.record.totalsupply - 9679.04681}</td>
     <td>{9679.04681}</td>
     <td>
-      <Link to={"/edit/" + props.record._id}>Edit</Link> |
+      <Link to={"/tokenedit/" + props.record._id}>Edit</Link> |
       <a
-        href="/"
+        href="#"
         onClick={() => {
-          props.deleteRecord(props.record._id);
+          confirmAlert({
+            title: 'Confirm to delete token',
+            message: 'Are you sure to delete this token?',
+            buttons: [
+              {
+                label: 'Yes',
+                onClick: () => {
+                  props.deleteToken(props.record._id);
+                }
+              },
+              {
+                label: 'No',
+                onClick: () => {}
+              }
+            ],
+            overlayClassName: "overlay-custom-class-name"
+          });
+         
         }}
       >
         Delete
@@ -43,7 +62,7 @@ class Tokens extends Component {
   // This is the constructor that shall store our data retrieved from the database
   constructor(props) {
     super(props);
-    this.deleteRecord = this.deleteRecord.bind(this);
+    this.deleteToken = this.deleteToken.bind(this);
     this.state = { 
       records: [],
       openModal : false,
@@ -106,8 +125,8 @@ class Tokens extends Component {
   }
 
   // This method will delete a record based on the method
-  deleteRecord(id) {
-    axios.delete(`${SERVER_MAIN_URL}/${id}`).then((response) => {
+  deleteToken(id) {
+    axios.delete(`${SERVER_MAIN_URL}/tokendelete/${id}`).then((response) => {
       console.log(response.data);
     });
 
@@ -123,7 +142,7 @@ class Tokens extends Component {
             return (
               <Record
                 record={currentrecord}
-                deleteRecord={this.deleteRecord}
+                deleteToken={this.deleteToken}
                 key={currentrecord._id}
               />
             );
