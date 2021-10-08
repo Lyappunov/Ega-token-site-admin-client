@@ -5,6 +5,7 @@
   "homepage": ".",
   "proxy": "http://localhost:3600",
   "dependencies": {
+    "@material-ui/core": "^4.12.3",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
@@ -12,14 +13,20 @@
     "bootstrap": "^5.1.1",
     "is-empty": "^1.2.0",
     "jwt-decode": "^3.1.2",
+    "match-sorter": "^4.0.0",
+    "namor": "^1.1.2",
     "passport": "^0.5.0",
     "passport-jwt": "^4.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-redux": "^7.2.5",
+    "react-responsive-modal": "^6.1.0",
     "react-router-dom": "^5.3.0",
     "react-scripts": "4.0.3",
+    "react-table": "^7.7.0",
     "redux-thunk": "^2.3.0",
+    "styled-component": "^2.8.0",
+    "styled-components": "^5.3.1",
     "web-vitals": "^1.0.1"
   },
   "scripts": {

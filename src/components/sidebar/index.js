@@ -15,7 +15,7 @@ class Sidebar extends Component {
     render() {
         return (
             <div>
-                <aside className="sidebar sidebar-default navs-rounded ">
+                <aside className="sidebar sidebar-default navs-rounded " style={{maxWidth:'13%'}}>
                     <SideHeader/>
                     <SideBody />
                 </aside> 

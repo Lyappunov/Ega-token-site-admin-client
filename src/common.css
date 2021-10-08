@@ -20122,3 +20122,9 @@ body.offcanvas-active {
 
 .top-1 {
   top: 1rem; }
+
+.react-responsive-modal-modal  {
+  max-width: 900px !important;
+  min-width: 900px !important;
+  background: none !important;
+}

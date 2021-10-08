@@ -16,6 +16,8 @@ import Signin from "./components/auth/signin";
 import Signup from "./components/auth/signup";
 import setAuthToken from "./utils/setAuthToken";
 import DashBoard from "./components/dashboard";
+import Transaction from "./components/transaction";
+import Tokens from "./components/tokens";
 import { setCurrentUser, logoutUser } from "./actions/authActions";
 import history from './history'
 
@@ -59,6 +61,12 @@ function App  ()  {
                 </PrivateRoute>
                 <PrivateRoute path="/dashboard">
                   <DashBoard />
+                </PrivateRoute>
+                <PrivateRoute path="/transaction">
+                  <Transaction />
+                </PrivateRoute>
+                <PrivateRoute path="/tokens">
+                  <Tokens />
                 </PrivateRoute>
             </Switch>
             
