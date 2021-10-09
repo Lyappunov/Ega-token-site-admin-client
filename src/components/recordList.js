@@ -20,8 +20,8 @@ const Record = (props) => (
         href="#"
         onClick={() => {
             confirmAlert({
-              title: 'Confirm to delete token',
-              message: 'Are you sure to delete this token?',
+              title: 'Confirm to delete User',
+              message: 'Are you sure to delete this user?',
               buttons: [
                 {
                   label: 'Yes',
