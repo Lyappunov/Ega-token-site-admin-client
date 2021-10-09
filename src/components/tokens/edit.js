@@ -74,15 +74,15 @@ class TokenEdit extends Component {
   // This following section will display the update-form that takes the input from the user to update the data.
   render() {
     return (
-      <div>
+        <div>
             <SideBar />
             <HeaderBar />
             <div className="container-fluid content-inner pb-0" style={{paddingLeft:'14%'}}>
                 <div className="row">
-                    <div className="col-sm-12">
+                    <div className="col-sm-10">
                         <div className="card" style={{paddingBottom:35}}>
                             <div className="card-header">
-                                <h4 className="card-title text-white">Update Token {this.state.name}</h4>
+                                <h4 className="card-title text-white">Update User {this.state.name}</h4>
                             </div>
                             <div className="d-flex mt-3 ms-4 me-4 justify-content-between">
                                 <form onSubmit={this.handleSubmit} style={{width:'100%'}}>
@@ -121,8 +121,8 @@ class TokenEdit extends Component {
                         </div>
                     </div>
                 </div>
-          </div>        
-      </div>
+            </div>        
+        </div>
     );
   }
 }

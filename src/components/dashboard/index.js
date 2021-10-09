@@ -43,7 +43,7 @@ class Dashboard extends Component {
       <div>
           <SideBar />
           <HeaderBar />
-          <div className="container-fluid content-inner pb-0" style={{marginLeft:'15%', paddingRight:'15%'}}>
+          <div className="container-fluid content-inner pb-0" style={{paddingLeft:'14%'}}>
               <PriceLongcard/>
               <PairePriceCardRow />
               <CandleChart />

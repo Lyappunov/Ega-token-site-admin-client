@@ -18,6 +18,7 @@ import setAuthToken from "./utils/setAuthToken";
 import DashBoard from "./components/dashboard";
 import Transaction from "./components/transaction";
 import Tokens from "./components/tokens";
+import Setting from "./components/setting";
 import TokenEdit from "./components/tokens/edit";
 import { setCurrentUser, logoutUser } from "./actions/authActions";
 import history from './history'
@@ -70,6 +71,9 @@ function App  ()  {
                   <Tokens />
                 </PrivateRoute>
                 <PrivateRoute path="/tokenedit/:id" component={TokenEdit} />
+                <PrivateRoute path="/setting">
+                  <Setting />
+                </PrivateRoute>
             </Switch>
             
         </Switch>  

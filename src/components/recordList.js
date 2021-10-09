@@ -4,6 +4,7 @@ import axios from 'axios';
 import PropTypes from "prop-types";
 import {connect} from "react-redux";
 import { Link } from "react-router-dom";
+import { confirmAlert } from 'react-confirm-alert';
 import SideBar from "./sidebar"
 import HeaderBar from "./headerbar"
 import {SERVER_MAIN_URL} from '../config'
@@ -16,9 +17,26 @@ const Record = (props) => (
     <td>
       <Link to={"/edit/" + props.record._id}>Edit</Link> |
       <a
-        href="/"
+        href="#"
         onClick={() => {
-          props.deleteRecord(props.record._id);
+            confirmAlert({
+              title: 'Confirm to delete token',
+              message: 'Are you sure to delete this token?',
+              buttons: [
+                {
+                  label: 'Yes',
+                  onClick: () => {
+                    props.deleteToken(props.record._id);
+                    window.location.href = '/list'
+                  }
+                },
+                {
+                  label: 'No',
+                  onClick: () => {}
+                }
+              ],
+              overlayClassName: "overlay-custom-class-name"
+            });
         }}
       >
         Delete
