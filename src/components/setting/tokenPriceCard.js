@@ -82,13 +82,13 @@ class TokenPriceCard extends Component {
                                     
                                         <span>Calculated Ega Coin price : &nbsp;&nbsp;&nbsp;
                                             {this.state.calculatedPrice == ''?
-                                            (<div className="spinner-border text-primary" role="status" style={{width:'1rem'}}> </div>):
+                                            (<div className="spinner-border text-primary" role="status" style={{width:'1rem', height:'1rem'}}> </div>):
                                             (<span style={{color:'yellow', fontSize:22}}>{this.state.calculatedPrice}</span>)}   
                                         </span>
                                         <br/><br/>
                                         <span>Ega Coin price to display : &nbsp;&nbsp;&nbsp;
                                             {this.state.calculatedPrice == ''?
-                                            (<div className="spinner-border text-primary" role="status" style={{width:'1rem'}}> </div>):
+                                            (<div className="spinner-border text-primary" role="status" style={{width:'1rem',height:'1rem'}}> </div>):
                                             (<span style={{color:'green', fontSize:22}}>{(this.state.displayPrice).toFixed(11)}</span>)}   
                                         </span>
                                     </div>
