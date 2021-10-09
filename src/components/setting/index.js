@@ -36,7 +36,7 @@ class Setting extends Component {
             <HeaderBar />
             <div className="container-fluid content-inner pb-0" style={{paddingLeft:'14%'}}>
                 <div className="row" style={{margin:'auto'}}>
-                    <div className="col-lg-5">
+                    <div className="col-lg-6">
                         <TokenPriceCard/>
                     </div>
                     <div className="col-lg-6">

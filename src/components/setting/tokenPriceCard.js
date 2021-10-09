@@ -15,12 +15,17 @@ class TokenPriceCard extends Component {
     this.state= {
         ega : '',
         mos : '',
-        id : ''
+        id : '',
+        calculatedPrice : '',
+        displayPrice:''
     }
     this.tokenPriceSubmit = this.tokenPriceSubmit.bind(this);
   }
   onChangeTokenPrice = e => {
     this.setState({ [e.target.id]: e.target.value });
+    if(e.target.id == 'ega'){
+        this.setState({displayPrice : (Number(this.state.calculatedPrice) + Number(e.target.value))})
+    }
   };
 
   componentDidMount() {
@@ -36,6 +41,12 @@ class TokenPriceCard extends Component {
       .catch(function (error) {
         console.log(error);
       });
+
+    axios
+      .get(`${SERVER_MAIN_URL}/egaprice`)
+      .then((res)=>{
+          this.setState({calculatedPrice: res.data, displayPrice : Number(res.data) + Number(this.state.ega)})
+      })
   }
 
   tokenPriceSubmit(e) {
@@ -67,13 +78,27 @@ class TokenPriceCard extends Component {
                         <div className="d-flex mt-3 ms-4 me-4 justify-content-between">
                             <form onSubmit={this.tokenPriceSubmit} style={{width:'100%'}}>
                                 <div className="modal-content">
+                                    <div className="modal-header" style={{display:'block'}}>
+                                    
+                                        <span>Calculated Ega Coin price : &nbsp;&nbsp;&nbsp;
+                                            {this.state.calculatedPrice == ''?
+                                            (<div className="spinner-border text-primary" role="status" style={{width:'1rem'}}> </div>):
+                                            (<span style={{color:'yellow', fontSize:22}}>{this.state.calculatedPrice}</span>)}   
+                                        </span>
+                                        <br/><br/>
+                                        <span>Ega Coin price to display : &nbsp;&nbsp;&nbsp;
+                                            {this.state.calculatedPrice == ''?
+                                            (<div className="spinner-border text-primary" role="status" style={{width:'1rem'}}> </div>):
+                                            (<span style={{color:'green', fontSize:22}}>{(this.state.displayPrice).toFixed(11)}</span>)}   
+                                        </span>
+                                    </div>
                                     <div className="modal-body">
                                         <div className="row">
                                             <div className="col-lg-4" >
                                                 <span style={{float:'right',display:'flex',  alignItems:'center', height:'100%', paddingBottom:'1.5rem'}}>EGA Coin</span>
                                             </div>
                                             <div className="col-lg-6">
-                                                <div className="form-floating mb-4">
+                                                <div className="form-floating mb-3">
                                                     <input type="text" className="form-control" id="ega" onChange={this.onChangeTokenPrice} value={this.state.ega}/>
                                                 </div>
                                             </div>
@@ -86,7 +111,7 @@ class TokenPriceCard extends Component {
                                                 <span style={{float:'right',display:'flex', alignItems:'center', height:'100%', paddingBottom:'1.5rem'}}>MOS Token</span>
                                             </div>
                                             <div className="col-lg-6">
-                                                <div className="form-floating mb-4">
+                                                <div className="form-floating mb-3">
                                                     <input type="text" className="form-control" id="mos" onChange={this.onChangeTokenPrice} value={this.state.mos}/>
                                                 </div>
                                             </div>
